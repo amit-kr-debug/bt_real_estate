@@ -61,5 +61,7 @@ def search(request):
         'state_choices': state_choices,
         'price_choices': price_choices,
         'listings': query_list,
+        'values': request.GET,
     }
+
     return render(request, 'listings/search.html', context)
