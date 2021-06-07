@@ -1,14 +1,15 @@
 {%extends 'base.html'%}
 {%load static%}
 {%load humanize%}
+{% block title %} | {{ listing.title }}{% endblock %}
 {%block content%}
 <section id="showcase-inner" class="py-5 text-white">
     <div class="container">
       <div class="row text-center">
         <div class="col-md-12">
-          <h1 class="display-4">45 Drivewood Circle</h1>
+          <h1 class="display-4">{{listing.title}}</h1>
           <p class="lead">
-            <i class="fas fa-map-marker"></i> Norwood MA, 02062</p>
+            <i class="fas fa-map-marker"></i> {{listing.city}} {{listing.state}}, {{listing.zipcode}} </p>
         </div>
       </div>
     </div>
@@ -25,7 +26,7 @@
           <li class="breadcrumb-item">
             <a href="{% url 'listings:listings' %}">Listings</a>
           </li>
-          <li class="breadcrumb-item active">42 Drivewood Circle</li>
+          <li class="breadcrumb-item active">{{listing.title}}</li>
         </ol>
       </nav>
     </div>
