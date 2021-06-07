@@ -27,6 +27,7 @@ def register(request):
                                                     password = password)
                     user.save()
                     auth.login(request, user)
+                    return redirect('accounts:dashboard')
 
         else:
             messages.error(request, 'Passwords do not match')
@@ -42,7 +43,6 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
-            messages.success(request, 'You are now logged in')
             return redirect('accounts:dashboard')
         else:
             messages.error(request, 'Invalid Credentials')

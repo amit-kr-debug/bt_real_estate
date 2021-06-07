@@ -10,5 +10,6 @@ class ListingAdmin(admin.ModelAdmin):
     search_fields = ('title', 'description', 'city', 'state', 'price', 'zipcode')
     list_per_page = 25
 
+
 admin.site.register(Listing, ListingAdmin)
 
