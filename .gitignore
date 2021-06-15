@@ -3,3 +3,4 @@ env
 db.sqlite3
 static
 /btre/secret_key.py
+staticfiles
